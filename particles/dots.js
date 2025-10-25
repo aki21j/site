@@ -29,26 +29,36 @@ function startParticles(){
     x:Math.random()*w,
     y:Math.random()*h,
     r:Math.random()*1.5+0.5,
-    vx:(Math.random()-0.5)*0.3,
-    vy:(Math.random()-0.5)*0.3,
+    vx:(Math.random()-0.5)*1.2,
+    vy:(Math.random()-0.5)*1.2,
     color: colors[Math.floor(Math.random()*colors.length)]
   }));
   
   function draw(){
-    ctx.fillStyle='rgba(15,23,36,0.12)';
+    // Create fading trail effect that disappears after a few seconds
+    ctx.fillStyle='rgba(15,23,36,0.15)';
     ctx.fillRect(0,0,w,h);
+    
+    // Update positions
     for(const d of dots){
       d.x+=d.vx;
       d.y+=d.vy;
+      
+      // Wrap around edges
       if(d.x<0)d.x=w;
       if(d.x>w)d.x=0;
       if(d.y<0)d.y=h;
       if(d.y>h)d.y=0;
+    }
+    
+    // Draw particles
+    for(const d of dots){
       ctx.beginPath();
       ctx.fillStyle=d.color;
       ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
       ctx.fill();
     }
+    
     anim=requestAnimationFrame(draw);
   }
   draw();
