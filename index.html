@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Gupta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #0f1828;
+            color: rgba(255,255,255,0.92);
+            overflow-x: hidden;
+        }
+        #particle-canvas {
+          position: fixed;
+          inset: 0;
+          z-index: -1;
+          pointer-events: none;
+        }
+        button:focus { outline: none; }
+    </style>
+</head>
+<body class="min-h-screen">
+  <canvas id="particle-canvas"></canvas>
+
+
+    <div class="max-w-6xl mx-auto px-6 py-14 grid grid-cols-[1fr_240px] gap-9 place-items-center">
+      <!-- Main content -->
+      <main id="main-panel" class="min-h-[70vh] space-y-6 place-content-center">
+          <section id="hero">
+              <h1 class="text-5xl font-light leading-tight mb-3">Ankit Gupta — photographs & sketches</h1>
+          </section>
+          <p class="text-lg opacity-85 max-w-3xl">
+            Small bodies of work: frames made in daylight and late-night studies on paper.
+            Not a CV — a quiet window into what I make. Browse photography or sketches from the right.
+          </p>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="border-l border-white/10 pl-6 flex flex-col justify-between">
+        <div>
+          <nav class="space-y-2 mb-8">
+            <button onclick="showPanel('hero')" class="block text-left w-full">Ankit</button>
+            <br>
+            <button onclick="showPanel('photos')" class="block text-left w-full hover:text-blue-400">Photos</button>
+            <button onclick="showPanel('sketches')" class="block text-left w-full hover:text-blue-400">Sketches</button>
+            <!-- <button onclick="showPanel('code')" class="block text-left w-full hover:text-blue-400">Code</button> -->
+            <!-- <button onclick="showPanel('about')" class="block text-left w-full hover:text-blue-400">About</button> -->
+          </nav>
+
+          <div class="space-y-2">
+            <label class="block text-xs uppercase opacity-70">Particles</label>
+            <select id="particle-mode" onchange="setParticleMode(this.value)" class="bg-transparent border border-white/10 rounded px-2 py-1 text-sm">
+              <!-- <option value="lorenz">Lorenz</option>
+              <option value="nodes">Nodes</option> -->
+              <option value="dots">Dots</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- <div class="text-sm opacity-80 mt-8">
+          <ul class="space-y-1">
+            <li><a href="https://github.com/aki21j" class="underline">GitHub</a></li>
+            <li><a href="#" class="underline">Instagram</a></li>
+            <li><a href="mailto:you@example.com" class="underline">Contact</a></li>
+          </ul>
+          <p class="mt-4">© Ank • Minimal visual collection</p>
+        </div> -->
+      </aside>
+    </div>
+
+    <script src="particles/dots.js"></script>
+    <script>
+      startParticles();
+    </script>
+</body>
+</html>
