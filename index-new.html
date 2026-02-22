@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Gupta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body class="min-h-screen dark-bg">
+  <div class="flex justify-end p-4">
+    <span class="glyph-button" id="theme-toggle" data-mode="theme-toggle" title="Theme Toggle"></span>
+  </div>
+
+    <div class="min-h-[60vh] max-w-6xl mx-auto px-6 py-14 grid grid-cols-[1fr_240px] gap-9 place-items-center">
+      <div id="main-content">
+        <div id="hero">
+          <h4 class="text-2xl font-light leading-tight mb-5">hey I'm Ankit</h4>
+        </div>
+        <div id="about">
+          <p class="text-base opacity-85 max-w-3xl">
+            Photos, sketches<span class="text-xs opacity-50"> & code - in that order</span>.
+            <br>
+            This is not a CV — but a quiet window into what I make.
+          </p>
+          <div class="flex items-center gap-3 mt-4">
+            <span class="glyph-button" id="lorenz" data-mode="lorenz" title="Lorenz">~</span>
+            <span class="glyph-button" id="dots" data-mode="dots" title="Dots"></span>
+            <span class="glyph-button" id="nodes" data-mode="nodes" title="Nodes"></span>
+          </div>
+        </div>
+      </div>
+      <aside id="sidebar" class="border-l border-white/10 pl-6 flex flex-col justify-between">
+        <nav class="space-y-2 mb-8">
+          <button onclick="showPanel('hero')" class="block text-left w-full hover:text-blue-400 hover:cursor-pointer" aria-label="Ankit">Ankit</button>
+          <br>
+          <button onclick="showPanel('photos')" class="block underline text-left w-full hover:text-blue-400 hover:cursor-pointer">Photos</button>
+          <button onclick="showPanel('sketches')" class="block underline text-left w-full hover:text-blue-400 hover:cursor-pointer">Sketches</button>
+          <button class="block text-left w-full hover:text-blue-400 hover:cursor-pointer">
+            <a href="https://github.com/aki21j" class="underline" target="_blank">Code</a>
+          </button>
+        </nav>
+      </aside>
+    </div>
+</body>
+</html>

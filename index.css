@@ -1,0 +1,87 @@
+html{
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: 'Geist Mono', monospace;
+}
+
+.dark-bg {
+    background: #222222;
+    color: #faf3e1;
+}
+
+.light-bg {
+    background: #faf3e1;
+    color: #222222;
+}
+
+/* Glyph buttons – pixel radius so scale doesn’t distort the shape */
+@keyframes glyph-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.glyph-button {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #faf3e1;
+    border-radius: 5px; /* half of 10px – stays round when scaled */
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+    animation: glyph-pulse 2.2s ease-in-out infinite;
+}
+
+.glyph-button:hover {
+    transform: scale(1.3);
+    animation: none; /* hover overrides pulse */
+}
+
+#theme-toggle {
+    background-color: #fdcc0a;
+    width: 13px;
+    height: 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.3);
+    animation: none; /* hover overrides pulse */
+}
+
+#lorenz {
+    background: none;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    color: #19d75f;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+#lorenz:hover {
+    color: #86efac;
+}
+
+#dots {
+    background-color: #60a5fa;
+}
+
+#dots:hover {
+    background-color: #7dd3fc;
+}
+
+#nodes {
+    background-color: #facc15;
+    height: 4px;
+    border-radius: 2px; /* pill shape, stays consistent when scaled */
+}
+
+#nodes:hover {
+    background-color: #fde047;
+}
+
